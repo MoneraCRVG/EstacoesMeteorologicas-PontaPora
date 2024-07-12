@@ -43,10 +43,23 @@ function carregarEstacoes(usuario) {
             .then(data => {
                 var newElement = document.createElement('span');
                 newElement.className = feed; // Use `feed` as class name
-                newElement.innerHTML = `${alias}: ${data.last_value}<br>`; // Use `alias` for display name
+                newElement.innerHTML = `<div>${alias}: ${values_Units(feed, data.last_value)}</div>`; // Use `alias` for display name
                 estacao.appendChild(newElement);
             })
             .catch(error => console.error('Error fetching data:', error));
     });
 
+}
+
+function values_Units(feed, value){
+    switch (feed) {
+        case 'temperatura':
+            return `${value} °C`
+        case 'umidade':
+            return `${value} %`
+        case 'uv':
+            return `${parseInt(value)}`
+        case 'pressao':
+            return `${value} hPa`
+    }
 }

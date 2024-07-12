@@ -1,4 +1,17 @@
 #map {
-    width: 400px;
-    height: 300px; 
+    width: auto;
+    max-width: 600px;
+    height: 450px;
+    margin: 0 auto; 
+}
+
+.escolas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Optional: adjust the height of the container */
+}
+
+.logo-escolas {
+    margin: 0 10px; /* Optional: adjust the space between the images */
 }
