@@ -1,6 +1,11 @@
 var map;
 function gerarMapa(){
-    map = L.map('map').setView([-22.526, -55.7227], 13); // setView([latitude, longitude], zoom)
+    map = L.map('map', {
+        center: [-22.526, -55.7227],
+        zoom: 12,
+        minZoom: 12,
+        maxZoom: 14
+    }); // setView([latitude, longitude], zoom)
 
         // Add a tile layer (OpenStreetMap)
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -24,6 +29,7 @@ function gerarMapa(){
                              carregarEstacoes(usuario);
                             })
                 });
+                // TODO: mostrar dados (temperatura, umidade, uv, etc...) invés de pinos, usando sistema de camadas
             })
             .catch(error => {
                 console.error('Error fetching data:', error);

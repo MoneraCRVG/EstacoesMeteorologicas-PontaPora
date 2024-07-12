@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+h1 {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
 #map {
     width: auto;
     max-width: 600px;
-    height: 450px;
+    height: 390px;
     margin: 0 auto; 
 }
 
